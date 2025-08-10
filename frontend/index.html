@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Polaroid Studio Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        
+        <div class="bg-gradient"></div>
+        <div class="bg-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+
+          
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Polaroid Studio</span>
+                        <span class="logo-subtitle">Pro</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="glass-btn" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="glass-btn" id="galleryBtn">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+          
+        <main class="main">
+              
+            <section class="screen active" id="homeScreen">
+                <div class="container">
+                    <div class="hero">
+                        <div class="hero-badge">
+                            <span>✨ Premium Experience</span>
+                        </div>
+                        <h1 class="hero-title">
+                            Create Stunning
+                            <span class="gradient-text">Polaroids</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Transform your memories into premium polaroids with AI-powered face detection and professional-grade effects
+                        </p>
+                    </div>
+
+                    <div class="upload-section">
+                        <div class="upload-card glass-card" id="uploadArea">
+                            <div class="upload-content">
+                                <div class="upload-icon">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                    </div>
+                                </div>
+                                <h3>Upload Your Photo</h3>
+                                <p>Drag & drop your image here or click to browse</p>
+                                <div class="upload-formats">
+                                    <span>JPG</span>
+                                    <span>PNG</span>
+                                    <span>WEBP</span>
+                                </div>
+                            </div>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                    <div class="features">
+                        <div class="feature-card glass-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>AI Face Detection</h4>
+                            <p>Smart cropping with advanced face recognition</p>
+                        </div>
+                        <div class="feature-card glass-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Premium Styles</h4>
+                            <p>Curvy Apple-style & Classic sharp-edge frames</p>
+                        </div>
+                        <div class="feature-card glass-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <h4>Pro Effects</h4>
+                            <p>Professional filters and vintage effects</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+ 
+            <section class="screen" id="editorScreen">
+                <div class="container">
+                    <div class="editor-header">
+                        <button class="glass-btn" id="backBtn">
+                            <i class="fas fa-arrow-left"></i>
+                           
+                        </button>
+                        <h2>Customize Your Polaroid</h2>
+                        <div></div>
+                    </div>
+
+                    <div class="editor-layout">
+                        <div class="editor-preview">
+                            <div class="preview-container glass-card">
+                                <img id="previewImage" alt="Preview">
+                                <div class="preview-overlay"></div>
+                            </div>
+                        </div>
+
+                        <div class="editor-controls">
+                            <div class="control-panel glass-card">
+                                <div class="control-section">
+                                    <h3>
+                                        <i class="fas fa-border-style"></i>
+                                        Frame Style
+                                    </h3>
+                                    <div class="frame-selector">
+                                        <div class="frame-option active" data-frame="curvy">
+                                            <div class="frame-preview curvy-frame">
+                                                <div class="frame-image"></div>
+                                                <div class="frame-text">Sample</div>
+                                            </div>
+                                            <span>Curvy Premium</span>
+                                            <div class="frame-badge">Apple Style</div>
+                                        </div>
+                                        <div class="frame-option" data-frame="classic">
+                                            <div class="frame-preview classic-frame">
+                                                <div class="frame-image"></div>
+                                                <div class="frame-text">Sample</div>
+                                            </div>
+                                            <span>Classic Sharp</span>
+                                            <div class="frame-badge">Traditional</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="control-section">
+                                    <h3>
+                                        <i class="fas fa-sliders-h"></i>
+                                        Photo Filters
+                                    </h3>
+                                    <div class="filter-controls">
+                                        <div class="filter-item">
+                                            <label>
+                                                <span>Brightness</span>
+                                                <span class="filter-value" id="brightnessValue">100%</span>
+                                            </label>
+                                            <input type="range" id="brightnessSlider" min="50" max="150" value="100">
+                                        </div>
+                                        <div class="filter-item">
+                                            <label>
+                                                <span>Contrast</span>
+                                                <span class="filter-value" id="contrastValue">100%</span>
+                                            </label>
+                                            <input type="range" id="contrastSlider" min="50" max="150" value="100">
+                                        </div>
+                                        <div class="filter-item">
+                                            <label>
+                                                <span>Saturation</span>
+                                                <span class="filter-value" id="saturationValue">100%</span>
+                                            </label>
+                                            <input type="range" id="saturationSlider" min="0" max="200" value="100">
+                                        </div>
+                                        <div class="filter-item">
+                                            <label>
+                                                <span>Tint</span>
+                                                <span class="filter-value" id="tintValue">50%</span>
+                                            </label>
+                                            <input type="range" id="tintSlider" min="0" max="100" value="50">
+                                            <div class="tint-labels">
+                                                <span class="tint-label-left">Green</span>
+                                                <span class="tint-label-right">Magenta</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="editor-actions">
+                        <button class="btn-primary" id="generateBtn">
+                            <i class="fas fa-magic"></i>
+                            Generate Polaroid
+                            <div class="btn-shine"></div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+             
+            <section class="screen" id="loadingScreen">
+                <div class="container">
+                    <div class="loading-content">
+                        <div class="loading-polaroid">
+                            <div class="polaroid-card">
+                                <div class="polaroid-image">
+                                    <div class="loading-shimmer"></div>
+                                </div>
+                                <div class="polaroid-caption">Creating magic...</div>
+                            </div>
+                        </div>
+                        
+                        <div class="loading-steps">
+                            <div class="step active" id="step1">
+                                <div class="step-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-title">Analyzing Image</span>
+                                    <span class="step-desc">Detecting faces and composition</span>
+                                </div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="step-icon">
+                                    <i class="fas fa-crop"></i>
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-title">Smart Cropping</span>
+                                    <span class="step-desc">Optimizing image composition</span>
+                                </div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="step-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-title">Applying Effects</span>
+                                    <span class="step-desc">Adding premium filters</span>
+                                </div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="step-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="step-content">
+                                    <span class="step-title">Finalizing</span>
+                                    <span class="step-desc">Creating your polaroid</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             
+            <section class="screen" id="resultScreen">
+                <div class="container">
+                    <div class="result-content">
+                        <div class="result-header">
+                            <h2>Your Polaroid is Ready! ✨</h2>
+                            <p>Download or save to your gallery</p>
+                        </div>
+
+                        <div class="result-polaroid">
+                            <div class="polaroid-showcase">
+                                <img id="resultImage" alt="Generated Polaroid">
+                            </div>
+                        </div>
+                        
+                        <div class="result-actions">
+                            <button class="btn-secondary" id="editAgainBtn">
+                                <i class="fas fa-edit"></i>
+                                Edit Again
+                            </button>
+                            <button class="btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i>
+                                Download
+                                <div class="btn-shine"></div>
+                            </button>
+                            <button class="btn-secondary" id="saveToGalleryBtn">
+                                <i class="fas fa-save"></i>
+                                Save to Gallery
+                            </button>
+                        </div>
+
+                        <button class="btn-outline" id="createNewBtn">
+                            <i class="fas fa-plus"></i>
+                            Create Another Polaroid
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+             
+            <section class="screen" id="galleryScreen">
+                <div class="container">
+                    <div class="gallery-header">
+                        <div>
+                            <h2>
+                                <i class="fas fa-images"></i>
+                                My Gallery
+                            </h2>
+                            <p>Your collection of premium polaroids</p>
+                        </div>
+                        <button class="glass-btn" id="closeGalleryBtn">
+                            <i class="fas fa-times"></i>
+                            Close
+                        </button>
+                    </div>
+                    <div class="gallery-grid" id="galleryGrid">
+                         Gallery items will be populated by JavaScript 
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+     
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

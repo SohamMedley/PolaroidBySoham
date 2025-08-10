@@ -1,0 +1,36 @@
+{
+  "name": "Polaroid Studio",
+  "short_name": "Polaroid Studio",
+  "description": "Create magical polaroids with AI-powered face detection and beautiful effects",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192/667eea/ffffff?text=📸",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512/667eea/ffffff?text=📸",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["photo", "entertainment", "productivity"],
+  "screenshots": [
+    {
+      "src": "https://via.placeholder.com/1280x720/667eea/ffffff?text=Polaroid+Studio+Desktop",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://via.placeholder.com/750x1334/667eea/ffffff?text=Polaroid+Studio+Mobile",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
