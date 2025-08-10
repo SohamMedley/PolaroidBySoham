@@ -1,6 +1,6 @@
 class PolaroidStudioPro {
   constructor() {
-    this.backendUrl = "http://localhost:5000"
+    this.backendUrl = window.location.origin
     this.currentImage = null
     this.currentImageBlob = null
     this.selectedFrame = "curvy"
@@ -452,3 +452,4 @@ let app
 document.addEventListener("DOMContentLoaded", () => {
   app = new PolaroidStudioPro()
 })
+
